@@ -7,9 +7,17 @@ public class PlayerControllerv1 : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public float speed = 15.0f;
+
+    //Boundaries within which player can move
     private float xRangeR = 15.0f;
     private float xRangeL = 19.0f;
     private float yRange = 9.0f;
+
+    //Making slot to drag and drop Projectile in Unity
+    public GameObject projectilePrefab;
+
+
+
 
 
     // Start is called before the first frame update
@@ -27,7 +35,7 @@ public class PlayerControllerv1 : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
 
-
+        // Resets position of player when player tries to move beyond play area
         if (transform.position.x < -xRangeL)
         {
             transform.position = new Vector3(-xRangeL, transform.position.y, transform.position.z);
@@ -46,6 +54,10 @@ public class PlayerControllerv1 : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
         }
 
-
+        //Launches projectile from player
+        if(Input.GetKeyDown(KeyCode.Space))
+            {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            }
     }
 }
