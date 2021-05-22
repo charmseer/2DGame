@@ -7,6 +7,8 @@ public class PlayerInput : MonoBehaviour
 {
     public InputAction movement;
     public CharacterController controller;
+    public GameObject player;
+    private int xRange = 17;
 
     private void Start()
     {
@@ -30,7 +32,19 @@ public class PlayerInput : MonoBehaviour
         finalVector.x = inputVector.x;
         finalVector.z = inputVector.y;
         // Debug.Log(movement.ReadValue<Vector2>().ToString());
-        
+        Debug.Log(finalVector); 
+        Debug.Log(player.transform.position);
+
+
+        if ( player.transform.position.x > xRange)
+        {
+            player.transform.position = new Vector3(xRange,transform.position.y, transform.position.z);
+        }
+        if (player.transform.position.x < -xRange)
+        {
+            player.transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
         controller.Move(finalVector * Time.deltaTime * 10f);
     }
 }
