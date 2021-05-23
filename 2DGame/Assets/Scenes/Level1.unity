@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &208434407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3262987908147718747, guid: 6024d0cfd59f7094b9b0c576a3041e4f, type: 3}
-  m_PrefabInstance: {fileID: 3262987908355088060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &229674574
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +282,7 @@ MonoBehaviour:
       m_Flags: 8
   speed: 10
   controller: {fileID: 229674580}
-  projectilePrefab: {fileID: 208434407}
+  projectilePrefab: {fileID: 3262987908147718747, guid: 6024d0cfd59f7094b9b0c576a3041e4f, type: 3}
 --- !u!143 &229674580
 CharacterController:
   m_ObjectHideFlags: 0
