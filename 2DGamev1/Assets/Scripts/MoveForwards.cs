@@ -12,7 +12,7 @@ public class MoveForwards : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
     }
