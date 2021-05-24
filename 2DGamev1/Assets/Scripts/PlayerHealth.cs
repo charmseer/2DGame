@@ -35,13 +35,21 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
             Debug.Log("Collided with Enemy");
+
+            if  (currentHealth == 0)
+            {
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
+
     }
 
     void TakeDamage(int damage)
     {
+        // Updates current health to reflect the damage taken
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
     }
 }
