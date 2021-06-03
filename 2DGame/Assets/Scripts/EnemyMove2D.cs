@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMov : MonoBehaviour
+public class EnemyMove2D : MonoBehaviour
 {
     public float speed = 40.0f;
     // Start is called before the first frame update
@@ -15,5 +15,11 @@ public class EnemyMov : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime * speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision Detected");
+        Destroy(gameObject);
     }
 }

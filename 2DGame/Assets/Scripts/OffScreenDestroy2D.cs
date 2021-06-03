@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOutofBounds : MonoBehaviour
+public class OffScreenDestroy2D : MonoBehaviour
 {
-    private float topBound = 26.0f;
-    private float lowerBound = 26.0f;
+    private float LeftBound = -55.0f;
+    private float RightBound = 55.0f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +18,12 @@ public class DestroyOutofBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > topBound)
+        if (transform.position.x < LeftBound)
         {
             Destroy(gameObject);
         }
-
-        else if (transform.position.x < -lowerBound)
+        
+        if (transform.position.x > RightBound)
         {
             Destroy(gameObject);
         }
