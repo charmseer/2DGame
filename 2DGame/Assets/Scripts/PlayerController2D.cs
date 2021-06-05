@@ -49,10 +49,10 @@ public class PlayerController2D : MonoBehaviour
 
         //Move the player
         Vector3 currentPosition = transform.position;
-        currentPosition.x += movementInput * speed * Time.deltaTime;
+        currentPosition.y += movementInput * speed * Time.deltaTime;
 
 
-        currentPosition.x = Mathf.Clamp(currentPosition.x, -mapWidth, mapWidth);
+        currentPosition.y = Mathf.Clamp(currentPosition.y, -mapHeight, mapHeight);
 
         /*        if( currentPosition.x < -mapWidth)
                 {
